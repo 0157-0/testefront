@@ -18,13 +18,6 @@ import Footer from "examples/Footer";
 
 // Data
 import { Popconfirm, Table, notification } from "antd";
-// import { columns } from "layouts/tables/data/columns";
-import { getServiceList } from "Services/getList";
-import { Button } from "@mui/material";
-import { useRouter } from "next/router";
-import { useQuery } from "../../hooks/query";
-import axios from "axios";
-import EditIcon from "@mui/icons-material/Edit";
 import LaunchIcon from '@mui/icons-material/Launch';
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { StatusService } from "utils/statusService";
@@ -32,14 +25,10 @@ import moment from "moment";
 import { useServices } from "hooks/useServices";
 import { serviceServices } from "Services/serviceService";
 import { ExportXLS } from "utils/exportXLS";
-import { useAuth } from "hooks/useAuth";
 function Tables({}) {
   const [page, setPage] = useState(1);
-  const router = useRouter();
-  const { services, servicesLoading } = useServices();
-  const { user, userData } = useAuth();
-// console.log(user);
-// console.log("userData", userData);
+  const { services } = useServices();
+
   const handleDelete = useCallback(async (id) => {
     try {
       await serviceServices.remove(id);

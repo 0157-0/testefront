@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Link, useLocation, useSearchParams } from "react-router-dom";
-import { React, useCallback, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { React, useCallback } from "react";
 
 // @mui material components
 import Grid from "@mui/material/Grid";
@@ -18,21 +18,14 @@ import Footer from "examples/Footer";
 
 // Data
 import { Popconfirm, Table, notification } from "antd";
-// import { columns } from "layouts/tables/data/columns";
-
-import { useRouter } from "next/router";
-import axios from "axios";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import moment from "moment";
 import { useProduct } from "hooks/useProduct";
 import { productServices } from "Services/ProductService";
-function Product({}) {
-  const [page, setPage] = useState(1);
-  const router = useRouter();
 
-  const { product, productLoading } = useProduct();
-
+function Product() {
+  const { product } = useProduct();
 
   const handleDelete = useCallback(async (id) => {
     try {

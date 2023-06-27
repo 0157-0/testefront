@@ -3,13 +3,13 @@ import Box from "@mui/material/Box";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { useState } from "react";
 import { useCallback } from "react";
 import MDBox from "components/MDBox";
 import MDInput from "components/MDInput";
 import MDButton from "components/MDButton";
-import { useLocation, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Masks from "utils/masks";
 import { useEffect } from "react";
 import { companyServices } from "Services/CompanyService";
@@ -18,13 +18,13 @@ import { useRouter } from "next/router";
 import { useCompanyId } from "hooks/useCompnayId";
 
 export default function EditCompany() {
-  const [loading, setLoading] = useState();
+  const [ setLoading] = useState();
   const [data, setData] = useState({});
   const router = useRouter();
 
   const { id } = useParams();
 
-  const { company, companyLoading } = useCompanyId(id);
+  const { company } = useCompanyId(id);
 
   const handleEdit = useCallback(() => {
     setLoading(true);

@@ -1,10 +1,6 @@
-import { useState } from "react";
-
 // @mui material components
 import Card from "@mui/material/Card";
 import Icon from "@mui/material/Icon";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
@@ -12,14 +8,8 @@ import MDTypography from "components/MDTypography";
 
 // @mui material components
 import DataTable from "examples/Tables/DataTable";
-import Tooltip from "@mui/material/Tooltip";
 import MDAvatar from "components/MDAvatar";
 import MDProgress from "components/MDProgress";
-
-// Data
-import data from "layouts/dashboard/components/Projects/data";
-import { useProduct } from "hooks/useProduct";
-import { useCompany } from "hooks/useCompany";
 
 // Images
 import logoXD from "assets/images/small-logos/logo-xd.svg";
@@ -28,18 +18,11 @@ import logoSlack from "assets/images/small-logos/logo-slack.svg";
 import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
 import logoJira from "assets/images/small-logos/logo-jira.svg";
 import logoInvesion from "assets/images/small-logos/logo-invision.svg";
-import team1 from "assets/images/team-1.jpg";
-import team2 from "assets/images/team-2.jpg";
-import team3 from "assets/images/team-3.jpg";
-import team4 from "assets/images/team-4.jpg";
 import { useServices } from "hooks/useServices";
 
 function Projects() {
   // const { columns, rows } = data();
-  const [menu, setMenu] = useState(null);
-  const { product, productLoading } = useProduct();
-  const { company, companyLoading } = useCompany();
-  const { services, servicesLoading } = useServices();
+  const { services } = useServices();
 
   // filtrando pelo status
 const servicesDone = services.filter(services => (services.status === "feito"));
@@ -47,10 +30,6 @@ const servicesWait = services.filter(services => (services.status === "aguardand
 const servicesDoing = services.filter(services => (services.status === "fazendo"));
 const servicesTodo = services.filter(services => (services.status === "a fazer"));
 
-  const openMenu = ({ currentTarget }) => setMenu(currentTarget);
-  const closeMenu = () => setMenu(null);
-
- 
 
   const Company = ({ image, name }) => (
     <MDBox display="flex" alignItems="center" lineHeight={1}>

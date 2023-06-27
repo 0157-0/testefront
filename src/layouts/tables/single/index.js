@@ -2,26 +2,21 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
-import { useState } from "react";
+import {  useParams } from "react-router-dom";
 import MDBox from "components/MDBox";
 import MDButton from "components/MDButton";
-import { useLocation, Link } from "react-router-dom";
-import { useRouter } from "next/router";
+import {  Link } from "react-router-dom";
 import { useServiceId } from "hooks/useServiceId";
 import TextField from "@mui/material/TextField";
 import { ExportPDF } from "utils/exportPDF";
 import { columnsPDF } from "./columnsPDF";
 
 export default function SingleService() {
-  const [loading, setLoading] = useState();
-  const [page, setPage] = useState(1);
 
-  const router = useRouter();
 
   const { id } = useParams();
 
-  const { service, serviceLoading } = useServiceId(id);
+  const { service } = useServiceId(id);
 
   const data = { ...service } ?? [];
 

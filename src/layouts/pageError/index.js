@@ -1,5 +1,5 @@
 import { Button, Result } from "antd";
-import { useLocation, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 
 function PageError() {
   return (

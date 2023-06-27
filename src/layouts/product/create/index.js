@@ -4,19 +4,12 @@ import TextField from "@mui/material/TextField";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
-import MenuItem from "@mui/material/MenuItem";
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useCallback } from "react";
 import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
 import MDInput from "components/MDInput";
 import MDButton from "components/MDButton";
-import { useLocation, Link } from "react-router-dom";
-import Masks from "utils/masks";
-import { financeServices } from "Services/FinanceService";
-import { useEffect } from "react";
-import { companyServices } from "Services/CompanyService";
+import {  Link } from "react-router-dom";
 import { productServices } from "Services/ProductService";
 import { useCompany } from "hooks/useCompany";
 import { notification } from "antd";
@@ -30,8 +23,7 @@ const INITIAL_DATA = {
 };
 
 export default function CreateProduct() {
-  const [loading, setLoading] = useState();
-  const navigate = useNavigate();
+  const [setLoading] = useState();
   const [data, setData] = useState(INITIAL_DATA);
 
   const submitData = useCallback(() => {
@@ -51,10 +43,10 @@ export default function CreateProduct() {
         });
       })
       .finally(() => setLoading(false));
-  }, [data]);
+  }, [data, setLoading]);
 
 
-  const { company, companyLoading } = useCompany();
+  const { company } = useCompany();
   return (
     <DashboardLayout>
       <DashboardNavbar />

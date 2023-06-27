@@ -3,18 +3,16 @@ import Box from "@mui/material/Box";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { useState } from "react";
 import { useCallback } from "react";
 import MDBox from "components/MDBox";
 import MDInput from "components/MDInput";
 import MDButton from "components/MDButton";
-import { useLocation, Link } from "react-router-dom";
-import Masks from "utils/masks";
+import {  Link } from "react-router-dom";
 import { useEffect } from "react";
 import { notification } from "antd";
 import { useRouter } from "next/router";
-import { useCompanyId } from "hooks/useCompnayId";
 import { serviceServices } from "Services/serviceService";
 import { useServiceId } from "hooks/useServiceId";
 import TextField from "@mui/material/TextField";
@@ -22,15 +20,15 @@ import { useCompany } from "hooks/useCompany";
 import { useProduct } from "hooks/useProduct";
 
 export default function EditService() {
-  const [loading, setLoading] = useState();
+  const [ setLoading] = useState();
   const [data, setData] = useState({});
   const router = useRouter();
 
   const { id } = useParams();
 
-  const { service, serviceLoading } = useServiceId(id);
-  const { company, companyLoading } = useCompany();
-  const { product, productLoading } = useProduct();
+  const { service } = useServiceId(id);
+  const { company } = useCompany();
+  const { product } = useProduct();
   const status = [
     {
       value: "a fazer",

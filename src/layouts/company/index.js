@@ -1,11 +1,7 @@
 import {
-  BrowserRouter as Router,
   Link,
-  useLocation,
-  useSearchParams,
-  useParams,
 } from "react-router-dom";
-import { React, useCallback, useEffect, useState } from "react";
+import { React, useCallback, useState } from "react";
 
 // @mui material components
 import Grid from "@mui/material/Grid";
@@ -33,11 +29,11 @@ import { ExportXLS } from "utils/exportXLS";
 import MDAlert from "components/MDAlert";
 import { useAuth } from "hooks/useAuth";
 
-function Company({}) {
-  const [page, setPage] = useState(1);
-  const { user, userData } = useAuth();
+function Company() {
+  const [page] = useState(1);
+  const { user } = useAuth();
 
-  const { company, companyLoading } = useCompany();
+  const { company } = useCompany();
 
   const handleDelete = useCallback(async (id) => {
     try {
@@ -109,14 +105,9 @@ function Company({}) {
   const alertContent = (name) => (
     <MDTypography variant="body2" color="white">
       Você não está autorizado{" "}
-      {/* <MDTypography component="a" href="#" variant="body2" fontWeight="medium" color="white">
-        an example link
-      </MDTypography> */}
       para acessar essa página.
     </MDTypography>
   );
-
-  console.log(user);
 
   return (
     <DashboardLayout>

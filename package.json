@@ -42,7 +42,7 @@
     "stream": "npm:stream-browserify",
     "stream-browserify": "^3.0.0",
     "stylis": "4.1.3",
-    "stylis-plugin-rtl": "2.1.1",
+    "stylis-plugin-rtl": "^2.1.1",
     "web-vitals": "3.3.0",
     "xlsx": "^0.18.5",
     "yarn": "^1.22.19",
@@ -50,7 +50,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start"

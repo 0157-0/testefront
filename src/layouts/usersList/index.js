@@ -10,7 +10,6 @@ import MDTypography from "components/MDTypography";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
-import DataTable from "examples/Tables/DataTable";
 
 // Data
 import { useCallback, useEffect, useState } from "react";
@@ -23,7 +22,6 @@ import moment from "moment";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { ExportXLS } from "utils/exportXLS";
-import Role from "utils/Role";
 import { RoleService } from "utils/Role";
 import MDButton from "components/MDButton";
 import Icon from "@mui/material/Icon";
@@ -32,10 +30,8 @@ import MDAlert from "components/MDAlert";
 
 function UsersList() {
   const [list, setList] = useState([]);
-  const [data, setData] = useState([]);
-  const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState();
-  const { user, userData } = useAuth();
+  const [page] = useState(1);
+  const { user } = useAuth();
 
   useEffect(() => {
     let mounted = true;

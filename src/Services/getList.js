@@ -1,5 +1,5 @@
 export function getList() {
-    return fetch('http://localhost:3001/usuarios')
+    return fetch('https://web-production-5193.up.railway.app/usuarios')
       .then(data => data.json())
   }
 

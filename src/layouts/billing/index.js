@@ -18,13 +18,13 @@ import { useAuth } from "hooks/useAuth";
 import MDAlert from "components/MDAlert";
 
 function Finances() {
-  const { user, userData } = useAuth();
+  const { user } = useAuth();
 
   // nomeando o mês
   const date = new Date();
   const month = date.toLocaleString("default", { month: "long" });
 
-  const { finances, financesLoading } = useFinances();
+  const { finances } = useFinances();
 
   // filtrando só quem tem o status "entrada"
   const financeEntrada = finances.filter((finances) => finances.status === "entrada");

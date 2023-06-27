@@ -4,21 +4,17 @@ import TextField from "@mui/material/TextField";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
-import MenuItem from "@mui/material/MenuItem";
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useCallback } from "react";
 import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
 import MDInput from "components/MDInput";
 import MDButton from "components/MDButton";
-import { useLocation, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import { serviceServices } from "Services/serviceService";
 import { useCompany } from "hooks/useCompany";
 import { useProduct } from "hooks/useProduct";
 import { notification } from "antd";
 import { useRouter } from "next/router";
-import { Route , withRouter} from 'react-router-dom';
 
 const INITIAL_DATA = {
   title: "",
@@ -29,11 +25,9 @@ const INITIAL_DATA = {
 };
 
 export default function CreateService() {
-  const [loading, setLoading] = useState();
+  const [ setLoading] = useState();
   const [form, setForm] = useState(INITIAL_DATA);
-  const navigate = useNavigate();
   // const [data, setData] = useState(INITIAL_DATA);
-  const [data, setData] = useState([]);
   const router = useRouter();
   const submitData = useCallback(() => {
     setLoading(true);

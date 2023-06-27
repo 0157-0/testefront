@@ -8,31 +8,22 @@ import MDBox from "components/MDBox";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
-import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
-import ReportsLineChart from "examples/Charts/LineCharts/ReportsLineChart";
 import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatisticsCard";
-
-// Data
-import reportsBarChartData from "layouts/dashboard/data/reportsBarChartData";
-import reportsLineChartData from "layouts/dashboard/data/reportsLineChartData";
 
 // Dashboard components
 import Projects from "layouts/dashboard/components/Projects";
-import OrdersOverview from "layouts/dashboard/components/OrdersOverview";
 import { useFinances } from "hooks/useFinances";
-import { useEffect, useState } from "react";
 import { useProduct } from "hooks/useProduct";
 import { useCompany } from "hooks/useCompany";
 import { useServices } from "hooks/useServices";
 
 
 function Dashboard() {
-  const { sales, tasks } = reportsLineChartData;
-  const { finances, financesLoading } = useFinances();
+  const { finances } = useFinances();
 
-  const { services, servicesLoading } = useServices();
-  const { product, productLoading } = useProduct();
-  const { company, companyLoading } = useCompany();
+  const { services } = useServices();
+  const { product } = useProduct();
+  const { company } = useCompany();
 
   // filtrando só quem tem o status "entrada"
   const financeEntrada = finances.filter((finances) => finances.status === "entrada");

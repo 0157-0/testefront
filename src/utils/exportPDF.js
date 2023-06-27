@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import moment from "moment";
-import Masks from "./masks";
 import { Button } from "antd";
 import { Document, Page, PDFDownloadLink, StyleSheet, Text, View } from "@react-pdf/renderer";
 

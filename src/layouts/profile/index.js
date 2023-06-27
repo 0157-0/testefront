@@ -1,15 +1,8 @@
 // @mui material components
 import Grid from "@mui/material/Grid";
-import Divider from "@mui/material/Divider";
-
-// @mui icons
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import InstagramIcon from "@mui/icons-material/Instagram";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
 
 // Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
@@ -23,13 +16,11 @@ import { useEffect, useState } from "react";
 import { Button, Descriptions, Radio } from "antd";
 import { useAuth } from "hooks/useAuth";
 import moment from "moment";
-import { Link, useParams } from "react-router-dom";
-import Masks from "utils/masks";
-import { useUserId } from "hooks/useUserId";
+import { Link } from "react-router-dom";
 import api from "Services/api";
 
 function Overview() {
-  const { user, userData } = useAuth();
+  const { user } = useAuth();
 const [userId, setUser] = useState();
 
 useEffect(() => {
@@ -39,14 +30,10 @@ useEffect(() => {
     .catch((err) => {
       console.error("ops! ocorreu um erro" + err);
     });
-}, []);
-
-console.log("userId",userId);
-console.log("user",user);
+}, [user?._id]);
 
   const [size, setSize] = useState("default");
   const onChange = (e) => {
-    console.log("size checked", e.target.value);
     setSize(e.target.value);
   };
 

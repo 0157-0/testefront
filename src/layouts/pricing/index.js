@@ -1,15 +1,10 @@
-import { BrowserRouter as Router, Link, useLocation, useSearchParams } from "react-router-dom";
-import { React, useCallback, useEffect, useState } from "react";
+import { React, useEffect, useState } from "react";
 
-// @mui material components
-import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
-import Icon from "@mui/material/Icon";
+
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
-import MDButton from "components/MDButton";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 
@@ -17,15 +12,6 @@ import InputAdornment from "@mui/material/InputAdornment";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
-
-// Data
-import { Popconfirm, Table, notification } from "antd";
-// import { columns } from "layouts/tables/data/columns";
-
-import { useRouter } from "next/router";
-import axios from "axios";
-import moment from "moment";
-import { useProduct } from "hooks/useProduct";
 import Masks from "utils/masks";
 import MyCard from "./card";
 
@@ -45,11 +31,7 @@ function Princing({}) {
   const [ml, setMl] = useState();
   const [cp, setCp] = useState();
   const [markup, setMarkup] = useState();
-  const [result, setResult] = useState();
   const [total, setTotal] = useState();
-
-  console.log(">>>>", data);
-
 
   useEffect(() => {
     if(data != null) {
@@ -63,7 +45,6 @@ function Princing({}) {
     console.log("data vazio")
   }, [data]);
 
- 
   // Função para calcular o resultado
   function calculateResult(dutv, df, dv, ml) {
     const dutvValue = parseFloat(dutv);
@@ -86,7 +67,6 @@ function Princing({}) {
     setMarkup(calculatedResult);
   }, [data]);
 
-   
   function calculateTotal(cp, markup) {
     const cpValue = parseFloat(cp);
     const markupValue = parseFloat(markup);
@@ -106,7 +86,6 @@ function Princing({}) {
     setTotal(roundedTotal);
   }, [data.cp, markup]);
 
-console.log("total", total)
 
   return (
     <DashboardLayout>
