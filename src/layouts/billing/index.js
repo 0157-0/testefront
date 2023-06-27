@@ -15,7 +15,7 @@ import TransactionEntry from "./components/TransactionsEntry";
 import { useFinances } from "hooks/useFinances";
 import Masks from "utils/masks";
 import { useAuth } from "hooks/useAuth";
-import MDAlert from "components/MDAlert";
+// import MDAlert from "components/MDAlert";
 
 function Finances() {
   const { user } = useAuth();
@@ -45,28 +45,28 @@ function Finances() {
     sumaSaida += financeSaida[i].valor;
   }
 
-  const alertContent = (name) => (
-    <MDTypography variant="body2" color="white">
-      Você não está autorizado{" "}
-      {/* <MDTypography component="a" href="#" variant="body2" fontWeight="medium" color="white">
-        an example link
-      </MDTypography> */}
-      para acessar essa página.
-    </MDTypography>
-  );
+  // const alertContent = (name) => (
+  //   <MDTypography variant="body2" color="white">
+  //     Você não está autorizado{" "}
+  //     {/* <MDTypography component="a" href="#" variant="body2" fontWeight="medium" color="white">
+  //       an example link
+  //     </MDTypography> */}
+  //     para acessar essa página.
+  //   </MDTypography>
+  // );
 
   return (
     <DashboardLayout>
       <DashboardNavbar absolute isMini />
 
-      {user.role !== "admin" && "financeiro" && (
+      {/* {user.role !== "admin" && "financeiro" && (
         <MDBox mt={8}>
           <MDAlert color="error" dismissible>
             {alertContent("error")}
           </MDAlert>
         </MDBox>
       )}
-      {user.role === "admin" && "fianceiro" && (
+      {user.role === "admin" && "fianceiro" && ( */}
         <>
           <MDBox mt={8}>
             <MDBox mb={3}>
@@ -113,7 +113,7 @@ function Finances() {
           </MDBox>
           <Footer />
         </>
-      )}
+      {/* )} */}
     </DashboardLayout>
   );
 }

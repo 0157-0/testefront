@@ -9,8 +9,8 @@ import { useCallback } from "react";
 import MDBox from "components/MDBox";
 import MDInput from "components/MDInput";
 import MDButton from "components/MDButton";
-import MDAlert from "components/MDAlert";
-import MDTypography from "components/MDTypography";
+// import MDAlert from "components/MDAlert";
+// import MDTypography from "components/MDTypography";
 import {  Link } from "react-router-dom";
 import Masks from "utils/masks";
 import { useEffect } from "react";
@@ -52,20 +52,20 @@ export default function EditUser() {
     }
   }, [user._id]);
 
-  const alertContent = (name) => (
-    <MDTypography variant="body2" color="white">
-      Você não está autorizado{" "}
-      {/* <MDTypography component="a" href="#" variant="body2" fontWeight="medium" color="white">
-        an example link
-      </MDTypography> */}
-      para acessar essa página.
-    </MDTypography>
-  );
+  // const alertContent = (name) => (
+  //   <MDTypography variant="body2" color="white">
+  //     Você não está autorizado{" "}
+  //     {/* <MDTypography component="a" href="#" variant="body2" fontWeight="medium" color="white">
+  //       an example link
+  //     </MDTypography> */}
+  //     para acessar essa página.
+  //   </MDTypography>
+  // );
 
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      {user.role !== "admin" && (
+      {/* {user.role !== "admin" && (
         <MDBox mt={8}>
           <MDAlert color="error" dismissible>
             {alertContent("error")}
@@ -73,7 +73,7 @@ export default function EditUser() {
         </MDBox>
       )}
       
-      {user.role === "admin" && (
+      {user.role === "admin" && ( */}
 
 
       <Box
@@ -154,7 +154,7 @@ export default function EditUser() {
           </MDBox>
         </MDBox>
       </Box>
-      )}
+      {/* )} */}
       <Footer />
     </DashboardLayout>
   );

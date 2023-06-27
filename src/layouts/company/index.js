@@ -26,7 +26,7 @@ import moment from "moment";
 import { serviceServices } from "Services/serviceService";
 import { useCompany } from "hooks/useCompany";
 import { ExportXLS } from "utils/exportXLS";
-import MDAlert from "components/MDAlert";
+// import MDAlert from "components/MDAlert";
 import { useAuth } from "hooks/useAuth";
 
 function Company() {
@@ -102,18 +102,18 @@ function Company() {
     },
   ];
 
-  const alertContent = (name) => (
-    <MDTypography variant="body2" color="white">
-      Você não está autorizado{" "}
-      para acessar essa página.
-    </MDTypography>
-  );
+  // const alertContent = (name) => (
+  //   <MDTypography variant="body2" color="white">
+  //     Você não está autorizado{" "}
+  //     para acessar essa página.
+  //   </MDTypography>
+  // );
 
   return (
     <DashboardLayout>
       <DashboardNavbar />
 
-      {user.role === "admin" && (
+      {/* {user.role === "admin" && ( */}
         <>
           <MDBox mt={4} mb={1}>
             <MDButton
@@ -158,14 +158,14 @@ function Company() {
           </MDBox>
           <Footer />
         </>
-      )}
-      {user.role !== "admin" && "financeiro" && (
+      {/* )} */}
+      {/* {user.role !== "admin" && "financeiro" && (
         <MDBox mt={8}>
           <MDAlert color="error" dismissible>
             {alertContent("error")}
           </MDAlert>
         </MDBox>
-      )}
+      )} */}
     </DashboardLayout>
   );
 }

@@ -26,7 +26,7 @@ import { RoleService } from "utils/Role";
 import MDButton from "components/MDButton";
 import Icon from "@mui/material/Icon";
 import { useAuth } from "hooks/useAuth";
-import MDAlert from "components/MDAlert";
+// import MDAlert from "components/MDAlert";
 
 function UsersList() {
   const [list, setList] = useState([]);
@@ -113,20 +113,20 @@ function UsersList() {
     },
   ];
 
-  const alertContent = (name) => (
-    <MDTypography variant="body2" color="white">
-      Você não está autorizado{" "}
-      {/* <MDTypography component="a" href="#" variant="body2" fontWeight="medium" color="white">
-        an example link
-      </MDTypography> */}
-      para acessar essa página.
-    </MDTypography>
-  );
+  // const alertContent = (name) => (
+  //   <MDTypography variant="body2" color="white">
+  //     Você não está autorizado{" "}
+  //     {/* <MDTypography component="a" href="#" variant="body2" fontWeight="medium" color="white">
+  //       an example link
+  //     </MDTypography> */}
+  //     para acessar essa página.
+  //   </MDTypography>
+  // );
 
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      {user.role === "admin" && (
+      {/* {user.role === "admin" && ( */}
         <>
           <ExportXLS dataSheet={list} page={page} sheetName="Relatório de usuários" />
           <MDButton
@@ -166,7 +166,7 @@ function UsersList() {
           </MDBox>
           <Footer />
         </>
-      )}
+      {/* )}
 
       {user.role !== "admin" && (
         <MDBox mt={8}>
@@ -174,7 +174,7 @@ function UsersList() {
             {alertContent("error")}
           </MDAlert>
         </MDBox>
-      )}
+      )} */}
     </DashboardLayout>
   );
 }
