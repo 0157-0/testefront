@@ -24,7 +24,7 @@ import { notification } from "antd";
 const userService = new UserService();
 
 function Cover() {
-  const [loading, setLoading] = useState();
+  const [setLoading] = useState();
   const [form, setForm] = useState([]);
   const navigate = useNavigate();
 

@@ -15,7 +15,7 @@ import { useFinances } from "hooks/useFinances";
 
 function ComplexStatisticsCard({ color, title, count, percentage, icon }) {
 
-  const { finances, financesLoading } = useFinances();
+  const { finances } = useFinances();
   // filtrando só quem tem o status "entrada"
   const financeEntrada = finances.filter(finances => (finances.status === "entrada"));
   
@@ -35,7 +35,7 @@ function ComplexStatisticsCard({ color, title, count, percentage, icon }) {
     sumaSaida+=financeSaida[i].valor; 
   } 
   
-  var total = sumaEntrada - sumaSaida;
+  // var total = sumaEntrada - sumaSaida;
   
   return (
     <Card>

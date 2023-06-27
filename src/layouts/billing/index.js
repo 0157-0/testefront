@@ -21,7 +21,7 @@ function Finances() {
   const { user } = useAuth();
 
   // nomeando o mês
-  const date = new Date();
+  // const date = new Date();
   // const month = date.toLocaleString("default", { month: "long" });
 
   const { finances } = useFinances();

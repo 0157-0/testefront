@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 // react-router-dom components
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -22,7 +22,7 @@ import MDButton from "components/MDButton";
 
 // Authentication layout components
 import BasicLayout from "layouts/authentication/components/BasicLayout";
-import UserService from "Services/UserService";
+// import UserService from "Services/UserService";
 
 // Images
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
@@ -36,7 +36,7 @@ function Basic() {
 
   // const handleSetRememberMe = () => setRememberMe(!rememberMe);
   // const [loading, setLoading] = useState();
-  const [form, setForm] = useState([]);
+  // const [form, setForm] = useState([]);
   // const navigate = useNavigate();
   const [fetchSession, loading] = useSession();
   const [email, setEmail] = useState("");

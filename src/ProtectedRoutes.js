@@ -1,6 +1,6 @@
 import React from 'react';
 import UserServices from 'Services/UserService';
-import Routering from './routes'
+// import Routering from './routes'
 import PageError from 'layouts/pageError';
 
 const userService = new UserServices();
