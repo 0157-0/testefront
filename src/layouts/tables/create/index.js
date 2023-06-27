@@ -57,8 +57,8 @@ export default function CreateService() {
   };
 
 
-  const { company, companyLoading } = useCompany();
-  const { product, productLoading } = useProduct();
+  const { company } = useCompany();
+  const { product } = useProduct();
 
   const status = [
     {

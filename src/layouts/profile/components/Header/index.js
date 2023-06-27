@@ -44,8 +44,7 @@ function Header({ children }) {
     return () => window.removeEventListener("resize", handleTabsOrientation);
   }, [tabsOrientation]);
 
-  const handleSetTabValue = (event, newValue) => setTabValue(newValue);
-  const { user, userData } = useAuth();
+  const { user } = useAuth();
 
  
 
