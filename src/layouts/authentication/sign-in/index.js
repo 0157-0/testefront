@@ -26,18 +26,18 @@ import UserService from "Services/UserService";
 
 // Images
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
-import { notification } from "antd";
 import { useSession } from "hooks/useSession";
+// import { notification } from "antd";
 
-const userService = new UserService();
+// const userService = new UserService();
 
 function Basic() {
-  const [rememberMe, setRememberMe] = useState(false);
+  // const [rememberMe, setRememberMe] = useState(false);
 
-  const handleSetRememberMe = () => setRememberMe(!rememberMe);
+  // const handleSetRememberMe = () => setRememberMe(!rememberMe);
   // const [loading, setLoading] = useState();
   const [form, setForm] = useState([]);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [fetchSession, loading] = useSession();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -63,9 +63,9 @@ function Basic() {
   //   }
   // };
 
-  const handleChange = (event) => {
-    setForm({ ...form, [event.target.name]: event.target.value });
-  };
+  // const handleChange = (event) => {
+  //   setForm({ ...form, [event.target.name]: event.target.value });
+  // };
   return (
     <BasicLayout image={bgImage}>
       <Card>

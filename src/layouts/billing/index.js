@@ -22,7 +22,7 @@ function Finances() {
 
   // nomeando o mês
   const date = new Date();
-  const month = date.toLocaleString("default", { month: "long" });
+  // const month = date.toLocaleString("default", { month: "long" });
 
   const { finances } = useFinances();
 

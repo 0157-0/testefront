@@ -38,11 +38,11 @@ import {
   setOpenConfigurator,
 } from "context";
 
-import UserService from "Services/UserService";
+// import UserService from "Services/UserService";
 import { notification } from "antd";
 import { useAuth } from "hooks/useAuth";
 
-const userService = new UserService();
+// const userService = new UserService();
 
 function DashboardNavbar({ absolute, light, isMini }) {
   const [navbarType, setNavbarType] = useState();
@@ -51,36 +51,36 @@ function DashboardNavbar({ absolute, light, isMini }) {
   const [openMenu, setOpenMenu] = useState(false);
   const route = useLocation().pathname.split("/").slice(1);
 
-  const [loading, setLoading] = useState();
+  // const [loading, setLoading] = useState();
 
-  let pessoaString = localStorage.getItem("name");
-  let emailString = localStorage.getItem("email");
-  let tokenString = localStorage.getItem("accessToken");
+  // let pessoaString = localStorage.getItem("name");
+  // let emailString = localStorage.getItem("email");
+  // let tokenString = localStorage.getItem("accessToken");
 
-  const [form, setForm] = useState([pessoaString, emailString, tokenString]);
+  // const [form, setForm] = useState([pessoaString, emailString, tokenString]);
   // console.log(form);
   const navigate = useNavigate();
-  const { user, userData } = useAuth();
+  const { user } = useAuth();
 
-  const handleLogout = async (event) => {
-    event.preventDefault();
-    try {
-      setLoading(true);
-      const response = await userService.logout(form);
-      navigate("/authentication/sign-in");
-      console.log("response do Login", response);
-      if (response === true) {
-        notification.success({
-          message: "Até breve",
-        });
-      }
-      setLoading(false);
-    } catch (err) {
-      notification.success({
-        message: "Algo deu errado ao tentar sair" + err,
-      });
-    }
-  };
+  // const handleLogout = async (event) => {
+  //   event.preventDefault();
+  //   try {
+  //     setLoading(true);
+  //     const response = await userService.logout(form);
+  //     navigate("/authentication/sign-in");
+  //     console.log("response do Login", response);
+  //     if (response === true) {
+  //       notification.success({
+  //         message: "Até breve",
+  //       });
+  //     }
+  //     setLoading(false);
+  //   } catch (err) {
+  //     notification.success({
+  //       message: "Algo deu errado ao tentar sair" + err,
+  //     });
+  //   }
+  // };
 
   useEffect(() => {
     // Setting the navbar type
@@ -110,7 +110,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
 
   const handleMiniSidenav = () => setMiniSidenav(dispatch, !miniSidenav);
   const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
-  const handleOpenMenu = (event) => setOpenMenu(event.currentTarget);
+  // const handleOpenMenu = (event) => setOpenMenu(event.currentTarget);
   const handleCloseMenu = () => setOpenMenu(false);
 
   // Render the notifications menu

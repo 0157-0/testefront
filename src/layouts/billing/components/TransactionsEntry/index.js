@@ -10,19 +10,16 @@ import MDButton from "components/MDButton";
 
 // Billing page components
 import { Link } from "react-router-dom";
-import { useCallback, useState } from "react";
-import { financeServices } from "Services/FinanceService";
+import {  useState } from "react";
 import { useFinances } from "hooks/useFinances";
 import { Table } from "antd";
 import { columns } from "./data/columns";
 import { ExportXLS } from "utils/exportXLS";
 
 function TransactionEntry() {
-  const [data, setData] = useState();
-  const [loading, setLoading] = useState();
   const [page, setPage] = useState(1);
 
-  const { finances, financesLoading } = useFinances();
+  const { finances } = useFinances();
 
   return (
     <Card sx={{ height: "100%" }}>

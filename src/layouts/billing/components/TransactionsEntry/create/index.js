@@ -4,18 +4,18 @@ import TextField from "@mui/material/TextField";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
-import MenuItem from "@mui/material/MenuItem";
-import { useNavigate } from "react-router-dom";
+// import MenuItem from "@mui/material/MenuItem";
+// import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useCallback } from "react";
 import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
+// import MDTypography from "components/MDTypography";
 import MDInput from "components/MDInput";
 import MDButton from "components/MDButton";
-import { useLocation, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import Masks from "utils/masks";
 import { financeServices } from "Services/FinanceService";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { notification } from "antd";
 
 const INITIAL_DATA = {
@@ -26,9 +26,9 @@ const INITIAL_DATA = {
 };
 
 export default function CreateFinance() {
-  const [loading, setLoading] = useState();
-  const [form, setForm] = useState(INITIAL_DATA);
-  const navigate = useNavigate();
+  const [setLoading] = useState();
+  // const [form, setForm] = useState(INITIAL_DATA);
+  // const navigate = useNavigate();
   // const [data, setData] = useState(INITIAL_DATA);
   const [data, setData] = useState(INITIAL_DATA);
 
