@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Link, useLocation, useSearchParams } from "react-router-dom";
-import { React, useCallback, useEffect, useState } from "react";
+import {  Link } from "react-router-dom";
+import { React, useCallback, useState } from "react";
 
 // @mui material components
 import Grid from "@mui/material/Grid";
@@ -41,10 +41,6 @@ function Tables({}) {
       });
     }
   }, []);
-
-  const onChange = (pagination, filters, sorter, extra) => {
-    console.log("params", pagination, filters, sorter, extra);
-  };
 
 
   const columns = [
