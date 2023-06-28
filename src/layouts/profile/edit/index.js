@@ -22,7 +22,7 @@ import { useUserId } from "hooks/useUserId";
 import { useRole } from "hooks/useRole";
 
 export default function EditUser() {
-  const [ setLoading] = useState();
+  const [loading, setLoading] = useState();
   const [data, setData] = useState({});
   const router = useRouter();
 
@@ -43,7 +43,7 @@ export default function EditUser() {
           description: err.message,
         })
       )
-      .finally(() => router.back());
+      // .finally(() => router.back());
   }, [data]);
 
   useEffect(() => {

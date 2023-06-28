@@ -26,7 +26,7 @@ const INITIAL_DATA = {
 };
 
 export default function CreateFinance() {
-  const [setLoading] = useState();
+  const [loading, setLoading] = useState();
   // const [form, setForm] = useState(INITIAL_DATA);
   // const navigate = useNavigate();
   // const [data, setData] = useState(INITIAL_DATA);

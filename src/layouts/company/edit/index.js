@@ -18,13 +18,14 @@ import { useRouter } from "next/router";
 import { useCompanyId } from "hooks/useCompnayId";
 
 export default function EditCompany() {
-  const [ setLoading] = useState();
+  const [loading, setLoading] = useState();
   const [data, setData] = useState({});
   const router = useRouter();
 
   const { id } = useParams();
 
   const { company } = useCompanyId(id);
+
 
   const handleEdit = useCallback(() => {
     setLoading(true);
@@ -37,7 +38,7 @@ export default function EditCompany() {
           description: err.message,
         })
       )
-      .finally(() => router.back());
+    //  .finally(() => router.back());
   }, [data]);
 
   useEffect(() => {

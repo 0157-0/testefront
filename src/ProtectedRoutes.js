@@ -8,7 +8,8 @@ const userService = new UserServices();
 const ProtectedRoutes = ({children}) => {
   const usuarioAutenticado = userService.usuarioAutenticado()
   console.log('usuarioAutenticado', usuarioAutenticado)
-  return usuarioAutenticado ?    <PageError/>  : children
+  // return usuarioAutenticado ?    <PageError/>  : children
+  return usuarioAutenticado ?    children :   <PageError/> 
 }
  
 export default ProtectedRoutes;

@@ -59,7 +59,7 @@ export default function EditService() {
           description: err.message,
         })
       )
-      .finally(() => router.back());
+      // .finally(() => router.back());
   }, [data]);
 
   useEffect(() => {

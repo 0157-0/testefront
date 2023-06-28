@@ -19,7 +19,7 @@ import { useProductId } from "hooks/useProductId";
 import { productServices } from "Services/ProductService";
 
 export default function EditProduct() {
-  const [ setLoading] = useState();
+  const [loading, setLoading] = useState();
   const [data, setData] = useState({});
   const router = useRouter();
 
@@ -27,7 +27,6 @@ export default function EditProduct() {
 
   const { product } = useProductId(id);
   const { company } = useCompany();
-
 
 
   const handleEdit = useCallback(() => {
@@ -41,7 +40,7 @@ export default function EditProduct() {
           description: err.message,
         })
       )
-      .finally(() => router.back());
+    //  .finally(() => router.back());
   }, [data]);
 
   useEffect(() => {
@@ -64,6 +63,30 @@ export default function EditProduct() {
         autoComplete="off"
       >
         <MDBox component="form" role="form">
+        <MDBox mb={2}>
+            <MDInput
+              name="lote"
+              placeholder="Digite o lote"
+              value={data.lote}
+              onChange={(e) => setData({ ...data, lote: e.target.value })}
+              type="text"
+              variant="outlined"
+              fullWidth
+              id="outlined-basic"
+            />
+          </MDBox>
+          <MDBox mb={2}>
+            <MDInput
+              name="num_prod"
+              placeholder="Digite o número do produto"
+              value={data.num_prod}
+              onChange={(e) => setData({ ...data, num_prod: e.target.value })}
+              type="number"
+              variant="outlined"
+              fullWidth
+              id="outlined-basic"
+            />
+          </MDBox>
           <MDBox mb={2}>
             <MDInput
               name="produto"

@@ -25,7 +25,7 @@ const INITIAL_DATA = {
 };
 
 export default function CreateService() {
-  const [ setLoading] = useState();
+  const [loading, setLoading] = useState();
   const [form, setForm] = useState(INITIAL_DATA);
   // const [data, setData] = useState(INITIAL_DATA);
   const router = useRouter();

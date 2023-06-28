@@ -23,7 +23,7 @@ const INITIAL_DATA = {
 };
 
 export default function CreateProduct() {
-  const [setLoading] = useState();
+  const [loading, setLoading] = useState();
   const [data, setData] = useState(INITIAL_DATA);
 
   const submitData = useCallback(() => {
